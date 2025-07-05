@@ -4,10 +4,15 @@
         @include('partials.head')
 
     </head>
-    <body class="flex transition-all bg-white dark:bg-zinc-800 min-h-screen">
-        <x-layouts.app.sidebar />
+    <body class="flex flex-col transition-all bg-background-light min-h-screen md:flex-row">
+        <div class="md:hidden">
+            <x-layouts.app.header />
+        </div>
+        <div class="hidden md:block">
+            <x-layouts.app.sidebar />
+        </div>
         <main class="flex-1">
-            {{ $slot ?? '' }}
+            {{ '' }}
         </main>
     </body>
 </html>

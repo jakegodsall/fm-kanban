@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import '../../vendor/livewire/flux/dist/flux.css';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -28,6 +27,10 @@
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+    --color-main-purple: #635FC7;
+    --color-secondary-purple: #A8A4FF;
+    --color-background-light: #F4F7FD;
 }
 
 @layer theme {
@@ -49,18 +52,14 @@
     }
 }
 
-[data-flux-field]:not(ui-radio, ui-checkbox) {
-    @apply grid gap-2;
-}
-
-[data-flux-label] {
-    @apply  !mb-0 !leading-tight;
-}
-
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+:root {
+    color: black;
 }
 
 /* \[:where(&)\]:size-4 {
