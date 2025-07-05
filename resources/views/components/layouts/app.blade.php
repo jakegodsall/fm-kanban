@@ -4,7 +4,7 @@
         @include('partials.head')
 
     </head>
-    <body class="flex flex-col transition-all bg-background-light min-h-screen md:flex-row">
+    <body class="flex flex-col transition-all bg-background-light min-h-screen max-w-screen md:flex-row">
         <div class="md:hidden">
             <x-layouts.app.header />
         </div>
@@ -12,7 +12,7 @@
             <x-layouts.app.sidebar />
         </div>
         <main class="flex-1">
-            {{ '' }}
+            {{ $slot ?? '' }}
         </main>
     </body>
 </html>
