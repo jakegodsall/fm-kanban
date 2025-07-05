@@ -11,7 +11,7 @@
     <div
         x-show="show"
         x-cloak
-        class="fixed bg-white z-20 p-5 max-w-md rounded-lg shadow-xl sm:w-full sm:mx-auto"
+        class="fixed w-4/5 bg-white z-20 p-5 max-w-md rounded-lg shadow-xl sm:w-full sm:mx-auto"
     >
         {{ $slot }}
     </div>
