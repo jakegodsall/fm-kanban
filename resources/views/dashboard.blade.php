@@ -1,3 +1,3 @@
 <x-layouts.app :title="__('Dashboards')">
-    <livewire:modals.add-new-task-modal />
+    <x-confirmation-modal />
 </x-layouts.app>
