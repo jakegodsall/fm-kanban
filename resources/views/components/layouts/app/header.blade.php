@@ -19,4 +19,3 @@
     </div>
 </header>
 
-<livewire:modals.add-new-task-modal />

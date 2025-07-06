@@ -7,4 +7,6 @@
             />
         @endforeach
     </main>
+
+    <livewire:modals.add-new-task-modal :boardId="$board->id" />
 </x-layouts.app>

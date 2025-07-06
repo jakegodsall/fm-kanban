@@ -2,20 +2,30 @@
 
 namespace App\Livewire\Modals;
 
+use App\Models\Kanban\Board;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
 class AddNewTaskModal extends Component
 {
-    public $showModal = true;
+    public bool $showModal = true;
+    public Board $board;
 
     public array $subtasks = [
     ];
 
+    public int $selectedStatusId;
+
     protected $listeners = [
         'showAddNewTaskModal' => 'toggleShowModal',
     ];
+
+    public function mount(int $boardId): void
+    {
+        $this->board = Board::with('columns')->findOrFail($boardId);
+        $this->selectedStatusId = $this->board->columns->first()->id;
+    }
 
     public function addSubtask(): void
     {

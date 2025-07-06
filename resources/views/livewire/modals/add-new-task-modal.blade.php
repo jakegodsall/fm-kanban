@@ -34,7 +34,9 @@
                 </div>
                 <div class="space-y-2 w-full">
                     <x-forms.label for="status">Status</x-forms.label>
-                    <x-forms.input type="text" id="status" />
+                    @if($this->board->columns)
+                        <x-forms.select :options="$this->board->columns" />
+                    @endif
                 </div>
                 <button class="w-full text-sm text-white py-2 rounded-full bg-main-purple cursor-pointer hover:opacity-90">Create Task</button>
             </div>
