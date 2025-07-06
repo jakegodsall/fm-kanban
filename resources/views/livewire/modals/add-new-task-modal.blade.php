@@ -15,9 +15,11 @@
                     <x-forms.label for="subtasks">Subtasks</x-forms.label>
                     <ul class="space-y-2">
                         @foreach ($this->subtasks as $subtask)
-                            <li class="flex space-x-2 items-center">
-                                <x-forms.input />
-                                <x-close-icon colour="gray" />
+                            <li class="flex space-x-2 items-center" wire:key="subtask-{{ $subtask['id'] }}">
+                                <x-forms.input  />
+                                <button wire:click="removeSubtask({{ $subtask['id'] }})">
+                                    <x-close-icon colour="gray" />
+                                </button>
                             </li>
                         @endforeach
                     </ul>
