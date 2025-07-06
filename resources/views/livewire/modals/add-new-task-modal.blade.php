@@ -13,7 +13,18 @@
                 </div>
                 <div class="space-y-2 w-full">
                     <x-forms.label for="subtasks">Subtasks</x-forms.label>
-                    <x-forms.input type="text" id="subtasks" />
+                    <ul class="space-y-2">
+                        @foreach ($this->subtasks as $subtask)
+                            <li class="flex space-x-2 items-center">
+                                <x-forms.input />
+                                <x-close-icon colour="gray" />
+                            </li>
+                        @endforeach
+                    </ul>
+                    <button
+                        wire:click="addSubtask"
+                        class="w-full text-xs font-bold bg-background-light text-main-purple rounded-full py-2 cursor-pointer"
+                    >+ Add New Subtask</button>
                 </div>
                 <div class="space-y-2 w-full">
                     <x-forms.label for="status">Status</x-forms.label>
