@@ -1,4 +1,4 @@
-<header class="fixed flex justify-between w-full px-4 py-5 bg-white">
+<header x-data class="fixed flex justify-between w-full px-4 py-5 bg-white">
     <div class="flex gap-4">
         <x-kanban-logo-small />
         <div class="flex gap-2 items-center">
@@ -7,7 +7,10 @@
         </div>
     </div>
     <div class="flex items-center gap-4">
-        <button class="px-4 py-2 rounded-full bg-secondary-purple">
+        <button
+            x-on:click="Livewire.dispatch('showAddNewTaskModal')"
+            class="px-4 py-2 rounded-full bg-secondary-purple cursor-pointer"
+        >
             <x-plus-icon color="white" />
         </button>
         <button>
@@ -15,3 +18,5 @@
         </button>
     </div>
 </header>
+
+<livewire:modals.add-new-task-modal />

@@ -1,11 +1,11 @@
 <div
-    x-data="{ show: true }"
+    x-data="{ show: @entangle($attributes->wire('model')) }"
     class="fixed inset-0 z-50 flex justify-center px-4 py-12"
 >
     <div
         x-show="show"
         x-cloak
-        @click="show = false"
+        wire:click="$toggle('showModal')"
         class="fixed inset-0 bg-black opacity-60 w-screen h-screen z-10"
     ></div>
     <div
