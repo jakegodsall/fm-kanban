@@ -14,14 +14,18 @@
                 <div class="space-y-2 w-full">
                     <x-forms.label for="subtasks">Subtasks</x-forms.label>
                     <ul class="space-y-2">
-                        @foreach ($this->subtasks as $subtask)
-                            <li class="flex space-x-2 items-center" wire:key="subtask-{{ $subtask['id'] }}">
-                                <x-forms.input  />
-                                <button wire:click="removeSubtask({{ $subtask['id'] }})">
-                                    <x-close-icon colour="gray" />
-                                </button>
-                            </li>
-                        @endforeach
+                        @if(count($this->subtasks) > 0)
+                            @foreach($this->subtasks as $subtask)
+                                <li class="flex space-x-2 items-center" wire:key="subtask-{{ $subtask['id'] }}">
+                                    <x-forms.input  />
+                                    <button
+                                        class="cursor-pointer"
+                                        wire:click="removeSubtask('{{ $subtask['id'] }}')">
+                                        <x-close-icon colour="gray" />
+                                    </button>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                     <button
                         wire:click="addSubtask"

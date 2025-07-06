@@ -11,8 +11,6 @@ class AddNewTaskModal extends Component
     public $showModal = true;
 
     public array $subtasks = [
-        ['id' => 1, 'name' => 'Subtask 1'],
-        ['id' => 2, 'name' => 'Subtask 2'],
     ];
 
     protected $listeners = [
@@ -27,10 +25,10 @@ class AddNewTaskModal extends Component
         ];
     }
 
-    public function removeSubtask(int $index): void
+    public function removeSubtask(string $uuid): void
     {
         $this->subtasks = array_values(
-            array_filter($this->subtasks, fn ($subtask) => $subtask['id'] != $index)
+            array_filter($this->subtasks, fn ($subtask) => $subtask['id'] != $uuid)
         );
     }
 
